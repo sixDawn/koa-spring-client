@@ -1,5 +1,5 @@
 import cookie from 'js-cookie';
-import { login } from './services';
+import { login, upload } from './services';
 
 export default ({
   namespace: 'index',
@@ -18,6 +18,9 @@ export default ({
     * subtract(_, { select, update }) {
       const { count } = yield select('index');
       yield update({ count: count - 1 });
+    },
+    * upload({ payload }, { call }) {
+      yield call(upload, payload);
     },
     * login({ payload }, { call, update }) {
       const user = yield call(login, payload);

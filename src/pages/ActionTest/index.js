@@ -2,6 +2,7 @@
 import React from 'react';
 import { model } from 'antd-doddle/decorator';
 import style from './index.less';
+import Edit from './edit';
 
 @model('index')
 export default class Index extends React.PureComponent {
@@ -11,7 +12,7 @@ export default class Index extends React.PureComponent {
   }
 
   render() {
-    const { error, loading, _add, _subtract, count, user } = this.props;
+    const { error, loading, _add, _subtract, _upload, count, user } = this.props;
     if (error) {
       return <div>{error.msg}</div>;
     }
@@ -39,6 +40,9 @@ export default class Index extends React.PureComponent {
               {loading.login ? <span>请求中</span> : <span>{user.name ? user.name : '未登录'}</span>}
             </div>
           </div>
+        </div>
+        <div className="block">
+          <Edit handle={_upload} />
         </div>
       </div>
     );

@@ -27,12 +27,15 @@ export default class Edit extends React.PureComponent {
   @bind
   handleSubmit() {
     const { handle, form: { validateFields } } = this.props;
-    validateFields((error, values) => {
+    validateFields((error, { file, ...values }) => {
       if (error) {
         return;
       }
       console.log('val', values);
-      handle(values);
+      handle({
+        file: file[0],
+        ...values
+      });
     });
   }
 

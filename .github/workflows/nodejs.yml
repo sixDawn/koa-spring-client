@@ -1,0 +1,27 @@
+name: Deploy blog source to github pages
+
+on: 
+  push:
+    branches:
+      - github
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@master
+      
+    - name: build
+      run: npm install && npm run pub
+
+    - name: deploy
+      uses: closertb/deploy-static-action@master
+      with:
+        name: 'doddle'
+        token: ${{ secrets.Deploy_Token }}
+        requestUrl: 'http://deploy.closertb.site/operate/deploy'
+        dist: 'dist'
+        target: 'admin'

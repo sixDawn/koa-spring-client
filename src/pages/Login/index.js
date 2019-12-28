@@ -44,6 +44,20 @@ class Login extends React.Component {
       if (errors) {
         return;
       }
+/*       fetch('http://localhost:4001/user/login', {
+        method: 'POST',
+        body: 'name=dom&pwd=123456',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }).then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(new Error('请求错误'));
+      })
+        .then(data => console.log('json:', data))
+        .catch(error => console.error('error:', error)); */
       login(values);
     });
   }

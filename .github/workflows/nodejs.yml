@@ -3,7 +3,7 @@ name: Deploy blog source to github pages
 on: 
   push:
     branches:
-      - github
+      - master
 
 jobs:
   build:

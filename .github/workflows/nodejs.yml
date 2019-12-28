@@ -1,4 +1,4 @@
-name: Deploy blog source to github pages
+name: Deploy site to my serverr
 
 on: 
   push:

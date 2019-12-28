@@ -3,7 +3,6 @@ import { connect } from 'dva';
 import { Form, Button } from 'antd';
 import { formRender } from 'antd-doddle';
 import { bind } from 'antd-doddle/decorator';
-import back from './back.jpg';
 import { fields } from './fields';
 import './index.less';
 
@@ -20,6 +19,7 @@ export const formItemLayout = {
   },
 };
 
+const back = 'https://doddle.oss-cn-beijing.aliyuncs.com/images/back.jpg';
 @connect(({ login }) => ({ ...login }), dispatch => ({
   login(payload) {
     dispatch({ type: 'login/login', payload });

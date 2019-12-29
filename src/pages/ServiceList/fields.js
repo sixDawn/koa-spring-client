@@ -17,7 +17,9 @@ export const searchFields = [{
 export const fields = [{
   key: 'scene_code',
   name: '场景',
-  enums: sceneEnums
+}, {
+  key: 'scene_name',
+  name: '场景名称',
 }, {
   key: 'param_code',
   name: 'Code',

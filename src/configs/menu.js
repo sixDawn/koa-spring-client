@@ -11,9 +11,15 @@ export default {
     component: 'ActionTest'
   },
   rule: {
-    name: '规则列表',
+    name: 'class实现',
     path: '/rule',
     icon: 'tool',
     component: 'Rule'
+  },
+  ruleHook: {
+    name: 'hook实现',
+    path: '/ruleHook',
+    icon: 'sketch',
+    component: 'RuleHook'
   }
 };

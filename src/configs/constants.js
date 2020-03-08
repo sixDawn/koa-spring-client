@@ -11,4 +11,5 @@ export const Paths = {
   HOME: '/home',
   ACTION: '/action',
   RULE: '/rule',
+  RULE_HOOK: '/ruleHook',
 };

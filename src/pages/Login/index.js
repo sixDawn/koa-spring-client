@@ -20,6 +20,8 @@ export const formItemLayout = {
 };
 
 const back = 'https://doddle.oss-cn-beijing.aliyuncs.com/images/back.jpg';
+
+const initData = { name: 'dom', pwd: '123456' };
 @connect(({ login }) => ({ ...login }), dispatch => ({
   login(payload) {
     dispatch({ type: 'login/login', payload });
@@ -85,7 +87,7 @@ class Login extends React.Component {
         <div className="h-login-form">
           <h3 className="h-login-logo">系统登录</h3>
           <Form>
-            {fields.map(field => <FormRender key={field.key} field={field} />)}
+            {fields.map(field => <FormRender key={field.key} field={field} data={initData} />)}
             <div style={{ textAlign: 'center' }}>
               <Button loading={loading.login} style={{ width: '100%' }} type="primary" onClick={this.handleLogin}>
                 登录

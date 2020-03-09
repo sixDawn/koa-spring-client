@@ -38,7 +38,7 @@ export default {
       yield put({ type: 'getList' });
     },
     * getDetail({ payload }, { call }) {
-      yield call(services.getDetail, payload);
+      return yield call(services.getDetail, payload);
     }
   },
 

@@ -26,7 +26,7 @@
 		"@doddle/dva": "^1.0.0",
 		"@doddle/http": "^2.2.4",
 		"antd": "^3.22.1",
-		"antd-doddle": "^1.3.0",
+		"antd-doddle": "^1.3.1",
 		"dva": "^2.4.1",
 		"react": "^16.13.0",
 		"react-dom": "^16.13.0",

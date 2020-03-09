@@ -18,7 +18,7 @@ import Edit from './Edit';
     dispatch({ type: 'rule/update', payload });
   },
   onGetDetail(payload) {
-    dispatch({ type: 'rule/getDetail', payload });
+    return dispatch({ type: 'rule/getDetail', payload });
   }
 }))
 export default class Root extends React.PureComponent {
@@ -56,11 +56,21 @@ export default class Root extends React.PureComponent {
   }
 
   @bind
-  handleEdit(detail = {}) {
-    this.setState({
-      detail,
-      visible: Symbol('')
-    });
+  handleEdit({ id } = {}) {
+    if (id) {
+      const { onGetDetail } = this.props;
+      onGetDetail({ id }).then((detail) => {
+        this.setState({
+          detail,
+          visible: Symbol('')
+        });
+      });
+    } else {
+      this.setState({
+        detail: {},
+        visible: Symbol('')
+      });
+    }
   }
 
   render() {
@@ -70,7 +80,7 @@ export default class Root extends React.PureComponent {
       search,
       datas,
       fields,
-      loading: { list: loading.getList },
+      loading: loading.getList,
       onSearch,
       total,
       extraFields: this.getExtraFields()

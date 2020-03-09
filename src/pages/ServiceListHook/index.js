@@ -31,15 +31,15 @@ export default function Root() {
     }
   ]);
 
-  const { data = {}, loading, forceUpdate } = useRequest('/rule/query', search, { prompt: true });
+  const { data = {}, loading, forceUpdate } =
+  useRequest('/rule/query', search, { prompt: true });
 
   const [onUpdate, { loading: updateLoading }] =
     useLazyRequest('/rule/update', {}, { callback: forceUpdate });
-
   const [onSave, { loading: saveLoading }] =
     useLazyRequest('/rule/save', {}, { callback: forceUpdate });
-
-  const onOk = useCallback(data => detail.id ? onUpdate({ id: detail.id, ...data }) : onSave(data), [detail]);
+  const onOk = useCallback(data => detail.id ?
+    onUpdate({ id: detail.id, ...data }) : onSave(data), [detail]);
 
   const { datas = [], total } = data;
 
@@ -47,9 +47,9 @@ export default function Root() {
     search,
     datas,
     fields,
-    loading,
     onSearch,
     total,
+    loading,
     extraFields: getExtraFields()
   };
 

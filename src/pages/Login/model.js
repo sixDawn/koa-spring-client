@@ -13,12 +13,13 @@ export default {
 
   effects: {
     * login({ payload }, { call, put }) {
-      const { id, token, name } = yield call(login, payload);
+      const { id, token, name, ossKey } = yield call(login, payload);
 
       const expires = { expires: 1 };
       cookie.set('uid', id, expires);
       cookie.set('username', name, expires);
       cookie.set('token', token, expires);
+      ossKey && cookie.set('ossKey', ossKey, expires);
       cookie.remove('lastPath');
       yield put(routerRedux.push('/home'));
     },

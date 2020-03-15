@@ -10,6 +10,12 @@ export default {
     icon: 'api',
     component: 'ActionTest'
   },
+  file: {
+    name: 'File',
+    path: '/file',
+    icon: 'api',
+    component: 'FileList'
+  },
   rule: {
     name: 'class实现',
     path: '/rule',

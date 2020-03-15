@@ -1,3 +1,8 @@
+import React from 'react';
+import { Input } from 'antd';
+
+const { Password } = Input;
+
 export const fields = [{
   key: 'name',
   name: '账号',
@@ -7,6 +12,8 @@ export const fields = [{
   key: 'pwd',
   name: '密码',
   required: true,
+  type: 'selfDefine',
+  child: () => <Password placeholder="请输入密码" />
 }];
 
 export const code = {
